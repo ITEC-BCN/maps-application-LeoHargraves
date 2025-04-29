@@ -8,5 +8,5 @@ import java.security.Permissions
 @Composable
 fun MainNavigationWrapper(){
     val navControler = rememberNavController()
-    //NavHost(navControler, Permissions)
+    NavHost(navControler, Permissions)
 }

@@ -13,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mapsapp.ui.screens.MapsScreen
+import com.example.mapsapp.ui.screens.PermissionsScreen
 import com.example.mapsapp.ui.theme.MapsAppTheme
+import com.example.mapsapp.utils.PermissionStatus
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
@@ -25,11 +27,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MapsAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MapsScreen(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MapsScreen()
             }
         }
     }
