@@ -33,10 +33,10 @@ import com.example.mapsapp.viewmodels.PermissionViewModel
 
 
 @Composable
-fun PermissionsScreen(){
+fun PermissionsScreen() {
     val activity = LocalContext.current as Activity
     val viewModel = viewModel<PermissionViewModel>()
-
+}/*
     val permissions = listOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.CAMERA,
@@ -111,3 +111,4 @@ fun PermissionsScreen(){
         }
     }
 }
+*/
