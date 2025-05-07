@@ -52,25 +52,20 @@ fun DrawerNavigation() {
         },
         drawerState = drawerState
     ) {
-
-        // Scaffold(
-
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    title = { Text("Zoro Maps") },
+                    navigationIcon = {
+                        IconButton(onClick = { scope.launch { drawerState.open() } }) {
+                            Icon(imageVector = Icons.Default.Menu, contentDescription = "Menu")
+                        }
+                    }
+                )
+            }
+        ) { innerPadding ->
+            MainNavigationWrapper(navController, Modifier.padding(innerPadding))
+        }
     }
 }
-/*
-Scaffold(
-topBar = {
-    TopAppBar(
-        title = { Text("Awesome App") },
-        navigationIcon = {
-            IconButton(onClick = { scope.launch { drawerState.open() } }) {
-                Icon(imageVector = Icons.Default.Menu, contentDescription = "Menu")
-            }
-        }
-    )
-}
-) { innerPadding ->
-    MainNavigationWrapper(navController, Modifier.padding(innerPadding))
-}
 
- */

@@ -13,7 +13,7 @@ enum class DrawerItem(
     val text: String,
     val route: Destination
 ) {
-    Permission(Icons.Default.Home, "Permission", Destination.Permission),
+    Permission(Icons.Default.Home, "Permission", Destination.PermissionR),
     Drawer(Icons.Default.Settings, "Drawer", Destination.Drawer),
     Map(Icons.Default.Settings, "Map", Destination.Map),
     List(Icons.Default.Info, "List", Destination.List),

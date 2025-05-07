@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 sealed class Destination {
     @Serializable
-    object Permission : Destination()
+    object PermissionR : Destination()
     @Serializable
     object Drawer : Destination()
     @Serializable

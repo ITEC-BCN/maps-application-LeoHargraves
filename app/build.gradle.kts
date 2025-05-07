@@ -68,6 +68,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose.v276)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime.livedata)
+    implementation(platform("io.github.jan-tennert.supabase:bom:3.1.4"))
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.ktor:ktor-client-android:3.1.2")
 }
 secrets {
     propertiesFileName = "secrets.properties"
