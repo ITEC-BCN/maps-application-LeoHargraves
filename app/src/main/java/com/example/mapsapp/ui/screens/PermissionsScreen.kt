@@ -36,7 +36,6 @@ import com.example.mapsapp.viewmodels.PermissionViewModel
 fun PermissionsScreen() {
     val activity = LocalContext.current as Activity
     val viewModel = viewModel<PermissionViewModel>()
-}/*
     val permissions = listOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.CAMERA,
@@ -74,7 +73,7 @@ fun PermissionsScreen() {
         Text("Permissions status:", fontSize = 24.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(16.dp))
         permissions.forEach { permission ->
-            val status = PermissionStatus[permission]
+            val status = permissionsStatus[permission]
             val label = when (status) {
                 null -> "Requesting..."
                 PermissionStatus.Granted -> "Granted"
@@ -111,4 +110,3 @@ fun PermissionsScreen() {
         }
     }
 }
-*/
