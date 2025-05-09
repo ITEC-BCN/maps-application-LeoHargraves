@@ -57,6 +57,14 @@ fun PermissionsScreen() {
             viewModel.updatePermissionStatus(permission, status)
         }
     }
+    /*
+    LaunchedEffect(Unit) {
+        if (!alreadyRequested) {
+
+            alreadyRequested = true
+            launcher.launch(permissions.toTypedArray())
+        }
+     */
 
     LaunchedEffect(Unit) {
         if (!alreadyRequested) {

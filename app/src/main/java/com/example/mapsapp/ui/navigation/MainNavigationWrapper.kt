@@ -16,12 +16,6 @@ import com.example.mapsapp.ui.screens.PermissionsScreen
 @Composable
 fun MainNavigationWrapper(navController: NavHostController, modifier: Modifier) {
     NavHost(navController, PermissionR) {
-        composable<PermissionR> {
-            PermissionsScreen()
-        }
-        composable<Drawer> {
-            DrawerNavigation()
-        }
         composable<Map> {
             DrawerNavigation()
         }
