@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.supabase.postgrest.kt)
+    implementation(libs.gotrue.kt)
+    implementation(libs.github.postgrest.kt)
+    implementation(libs.supabase.kt)
 }
 secrets {
     propertiesFileName = "secrets.properties"

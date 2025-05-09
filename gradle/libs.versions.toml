@@ -2,6 +2,7 @@
 agp = "8.9.0"
 bom = "3.1.4"
 coilCompose = "2.7.0"
+gotrueKt = "1.2.0"
 kotlin = "2.0.21"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -27,6 +28,8 @@ androidx-navigation-compose-v276 = { module = "androidx.navigation:navigation-co
 androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
 bom = { module = "io.github.jan-tennert.supabase:bom", version.ref = "bom" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+github-postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "gotrueKt" }
+gotrue-kt = { module = "io.github.jan-tennert.supabase:gotrue-kt", version.ref = "gotrueKt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -47,6 +50,7 @@ play-services-maps = { module = "com.google.android.gms:play-services-maps", ver
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
 postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
+supabase-kt = { module = "io.github.jan-tennert.supabase:supabase-kt", version.ref = "gotrueKt" }
 supabase-postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
 
 [plugins]
