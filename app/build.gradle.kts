@@ -1,3 +1,13 @@
+import java.util.Properties
+
+val localPropsFile = rootProject.file("local.properties")
+val localProps = Properties().apply {
+    if (localPropsFile.exists()) {
+        load(localPropsFile.inputStream())
+    }
+}
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,19 +18,29 @@ plugins {
 
 
 android {
-    namespace = "com.example.mapsapp"
+    namespace = "com.example.supabasetest"
     compileSdk = 35
-
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId = "com.example.mapsapp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            type = "String",
+            name = "SUPABASE_URL",
+            value = "\"${localProps.getProperty("supabaseUrl") ?: ""}\""
+        )
+        buildConfigField(
+            type = "String",
+            name = "SUPABASE_KEY",
+            value = "\"${localProps.getProperty("supabaseKey") ?: ""}\""
+        )
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -37,15 +57,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
 }
 
 dependencies {
-    implementation(libs.bom)
     implementation(libs.postgrest.kt)
-    implementation(libs.ktor.client.android)
     implementation("io.github.jan-tennert.supabase:storage-kt:$3.1.4")
     implementation(libs.coil.compose)
     implementation(libs.androidx.core.ktx)
@@ -75,6 +90,10 @@ dependencies {
     implementation(libs.gotrue.kt)
     implementation(libs.github.postgrest.kt)
     implementation(libs.supabase.kt)
+    implementation(libs.auth.kt)
+    implementation(libs.bom)
+    implementation(libs.io.github.jan.tennert.supabase.postgrest.kt)
+    implementation(libs.ktor.client.android)
 }
 secrets {
     propertiesFileName = "secrets.properties"

@@ -4,6 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.mapsapp.utils.PermissionStatus
 import androidx.compose.runtime.State
+import com.example.mapsapp.MyApp
 
 
 class PermissionViewModel: ViewModel() {
