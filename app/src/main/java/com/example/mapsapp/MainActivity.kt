@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
 import com.example.mapsapp.ui.Drawer.DrawerNavigation
+import com.example.mapsapp.ui.navigation.PermissionNavigation
 import com.example.mapsapp.ui.screens.MapsScreen
 import com.example.mapsapp.ui.theme.MapsAppTheme
 
@@ -14,7 +17,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MapsAppTheme {
-                DrawerNavigation()
+                val navController = rememberNavController()
+                PermissionNavigation(navController, Modifier)
             }
         }
     }

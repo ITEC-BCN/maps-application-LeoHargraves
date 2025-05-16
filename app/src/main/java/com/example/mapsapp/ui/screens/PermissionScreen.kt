@@ -33,7 +33,7 @@ import com.example.mapsapp.viewmodels.PermissionViewModel
 
 
 @Composable
-fun PermissionsScreen() {
+fun PermissionScreen(navigateToApp: () -> Unit) {
     val activity = LocalContext.current as Activity
     val viewModel = viewModel<PermissionViewModel>()
     val permissions = listOf(
@@ -57,15 +57,6 @@ fun PermissionsScreen() {
             viewModel.updatePermissionStatus(permission, status)
         }
     }
-    /*
-    LaunchedEffect(Unit) {
-        if (!alreadyRequested) {
-
-            alreadyRequested = true
-            launcher.launch(permissions.toTypedArray())
-        }
-     */
-
     LaunchedEffect(Unit) {
         if (!alreadyRequested) {
             alreadyRequested = true
@@ -116,5 +107,12 @@ fun PermissionsScreen() {
                 Text("Go to settings")
             }
         }
+        LaunchedEffect(permissionsStatus) {
+            if (permissionsStatus.size == permissions.size &&
+                permissions.all { permissionsStatus[it] == PermissionStatus.Granted}) {
+                navigateToApp()
+            }
+        }
+
     }
 }
